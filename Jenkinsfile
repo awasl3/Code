@@ -3,6 +3,7 @@ pipeline {
 
   tools {
     jdk '11'
+    dockerTool 'docker'
   }
 
   stages {
