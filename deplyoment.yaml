@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ciops
+  name: ciops
+  namespace: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ciops
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ciops
+    spec:
+      containers:
+      - image: timcicd/gitops:19
+        ports:
+            - containerPort: 9990
+        name: ciops
+        resources: {}
+status: {}
