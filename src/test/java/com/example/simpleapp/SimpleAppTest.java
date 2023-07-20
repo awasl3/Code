@@ -8,6 +8,7 @@ class SimpleAppTests {
 
 	@Test
 	void contextLoads() {
+		assertTrue(true);
 	}
 
 }
