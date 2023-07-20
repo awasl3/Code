@@ -7,9 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 class SimpleAppTests {
 
+	//Only used for test coverage 
 	@Test
 	void contextLoads() {
-		assertTrue(true);
+		SimpleApp.main(new String[] {});
 	}
 
 }
