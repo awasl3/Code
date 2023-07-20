@@ -9,6 +9,10 @@ public class Controller {
     @GetMapping(path = "/test")
     public String hello() {
         return "Hello123";
-    
+        }
+
+    @GetMapping(path = "/hello")
+    public String helloCiOps() {
+        return "Hello CiOps";
         }
 }
