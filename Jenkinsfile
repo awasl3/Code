@@ -35,7 +35,7 @@ pipeline {
         //     dockerImage.push()
         //   }
         // }
-        withCredentials([usernamePassword(credentialsId: 'dockcred', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+        withCredentials([usernamePassword(credentialsId: 'dockercredentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
           sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
           sh "docker build -t timcicd/gitops:${env.BUILD_ID} --build-arg JAR_FILE=build/libs/simple-app-0.0.1-SNAPSHOT.jar ."
           sh "docker push timcicd/gitops:${env.BUILD_ID}"
