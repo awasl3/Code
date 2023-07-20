@@ -6,9 +6,13 @@ pipeline {
   }
 
   stages {
-    stage('test') {
+    stage('build and test') {
       steps {
-        sh "./gradlew build"
+        withSonarQubeEnv('sonarqube') {
+          sh "./gradlew build"
+          sh "./gradlew test jacocoTestReport"
+          sh "./gradlew build sonarqube -Dsonar.projectKey=ciops"
+        }  
       }
     }
   }
