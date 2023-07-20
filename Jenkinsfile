@@ -45,7 +45,7 @@ pipeline {
 
     stage("Deploy") {
       steps {
-        withKubeConfig([namespace: 'app']) {
+        withKubeConfig([credentialsId: 'kubernetescredentials',namespace: 'app']) {
           sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.26.6/bin/linux/amd64/kubectl"'  
           sh 'chmod u+x ./kubectl'  
           sh "./kubectl set image deployment/ciops ciops=timcicd/gitops:${env.BUILD_ID}"
