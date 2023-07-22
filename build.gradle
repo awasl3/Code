@@ -21,8 +21,8 @@ repositories {
 }
 
 sonarqube {
-  properties {
-    property "sonar.projectKey", "ciops"
+  	properties {
+    		property "sonar.projectKey", "ciops"
   }
 }
 
