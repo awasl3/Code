@@ -1,2 +1,2 @@
 # Code
-Simple Spring Boot Applikation
+Simple Spring Boot Applikation.
